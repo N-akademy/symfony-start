@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProgramRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Category;
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
