@@ -16,13 +16,21 @@ class CategoryFixtures extends Fixture
     'Horreur'
     ];
 
+    public const CATEGORY_REFERENCE = 'Horreur';
+
     public function load(ObjectManager $manager)
     {
         foreach (self::CATEGORIES as $categoryName) {
             $category = new Category();
             $category->setName($categoryName);
             $manager->persist($category);
+
+            if ($categoryName === 'Horreur') {
+                $this->addReference(self::CATEGORY_REFERENCE, $category);
+            }
         }
+
         $manager->flush();
+
     }
 }

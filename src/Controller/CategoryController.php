@@ -45,7 +45,6 @@ class CategoryController extends AbstractController
             echo('No program found in this category table.');
         }
 
-
         return $this->render('category/show.html.twig', [
             'programs' => $program, 'category' => $categoryName]);
     }
